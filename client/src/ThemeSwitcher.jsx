@@ -17,17 +17,15 @@ function ThemeSwitcher() {
   return (
     <button
       onClick={toggleTheme}
-      className="text-stone-800 dark:text-stone-100 text-4xl flex flex-row"
+      className="text-stone-800 dark:text-stone-100 text-4xl flex flex-row ease-in-out duration-300 hover:scale-130 hover:text-bright-accent dark:hover:text-dark-accent cursor-pointer"
     >
       {theme === "light" ? (
         <>
           <Moon />
-          {theme}{" "}
         </>
       ) : (
         <>
           <Sun />
-          {theme}{" "}
         </>
       )}
     </button>
