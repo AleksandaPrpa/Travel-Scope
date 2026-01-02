@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "646642572958",
+    "firebase_url": "https://travel-scope-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "travel-scope",
+    "storage_bucket": "travel-scope.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646642572958:android:3d6ce8596626c897b7258f",
+        "android_client_info": {
+          "package_name": "com.prpa.travelscope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646642572958-0tlqdet8n90qkf777u99r1r27kljabi1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prpa.travelscope",
+            "certificate_hash": "c203f3ffaf55452855c85b8550f61d8d20fc6069"
+          }
+        },
+        {
+          "client_id": "646642572958-abb982l28gq0tvl722o2o6k6tni987gu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXF7LIrMEgov26UPDGkddbbVQok6oNrSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646642572958-98mnm0lk7d4tuc42mm9j7q9fvvbooa18.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "646642572958-feg1tp3ctpqpuug0spa9ll24rvvp1mc4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.prpa.travelscope"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

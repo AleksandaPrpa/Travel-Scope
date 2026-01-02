@@ -2,6 +2,7 @@
   "expo": {
     "name": "travel-scope",
     "slug": "travel-scope",
+    "scheme": "travelscope",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,10 +21,20 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.prpa.travelscope"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f9d96d78-dae3-464a-a497-7d8454a14b89"
+      }
+    },
+    "owner": "prpa",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
