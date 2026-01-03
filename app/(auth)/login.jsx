@@ -21,7 +21,17 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const login = () => {};
+  const login = async () => {
+    setLoading(true);
+    try {
+      await auth().signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      alert("Login failed: " + error.message);
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <ThemedView style={styles.container}>
@@ -36,6 +46,7 @@ const Login = () => {
         <TextInput
           value={password}
           onChangeText={setPassword}
+          autoCapitalize="none"
           placeholder="Password"
           secureTextEntry
         />

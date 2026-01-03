@@ -1,11 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import ThemedView from "../../components/ThemedView";
+import SignOut from "../(auth)/signout";
+import auth from "@react-native-firebase/auth";
 
 export default function Profile() {
   return (
     <ThemedView safe={true} style={styles.container}>
-      <Text>Profile works!</Text>
+      <Text>Welcome, {auth().currentUser?.email}</Text>
+      <SignOut />
     </ThemedView>
   );
 }
