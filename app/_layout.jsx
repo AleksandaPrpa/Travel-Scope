@@ -20,21 +20,37 @@ export default function RootLayout() {
     setUser(user);
     if (initializing) setInitializing(false);
   };
+
   useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-    return subscriber;
+    const unsub = auth().onAuthStateChanged((u) => {
+      setUser(u);
+      setInitializing(false);
+    });
+    return unsub;
   }, []);
+
   useEffect(() => {
     if (initializing) return;
 
     const inAuthGroup = segments[0] === "(auth)";
+    const inDashboardGroup = segments[0] === "(dashboard)";
 
-    if (user && !inAuthGroup) {
-      router.replace("/offers");
-    } else if (!user && inAuthGroup) {
+    if (!user && !inAuthGroup) {
       router.replace("/login");
     }
-  }, [user, initializing]);
+
+    if (user && !inDashboardGroup) {
+      router.replace("/offers");
+    }
+  }, [user, initializing, segments]);
+
+  if (initializing) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center" }}>
+        <ActivityIndicator />
+      </View>
+    );
+  }
   if (initializing)
     return (
       <View>

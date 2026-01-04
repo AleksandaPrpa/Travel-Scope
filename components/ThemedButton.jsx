@@ -9,7 +9,11 @@ function ThemedButton({ children, style, ...props }) {
       style={({ pressed }) => [styles.btn, pressed && styles.pressed, style]}
       {...props}
     >
-      <Text style={[styles.text, { color: theme.text }]}>{children}</Text>
+      <Text
+        style={[styles.text, (style = { color: "#f2f2f2", fontWeight: "600" })]}
+      >
+        {children}
+      </Text>
     </Pressable>
   );
 }
