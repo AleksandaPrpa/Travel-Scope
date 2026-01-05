@@ -1,17 +1,14 @@
-import { Button, View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import auth from "@react-native-firebase/auth";
-import { useRouter } from "expo-router";
+import ThemedButton from "../../components/ThemedButton";
 
 const SignOut = () => {
-  // const router = useRouter();
   const signOut = () => {
     auth().signOut();
-
-    // router.replace("/login");
   };
   return (
     <View>
-      <Button title="Sign Out" onPress={signOut} />
+      <ThemedButton onPress={signOut}>Sign Out</ThemedButton>
     </View>
   );
 };

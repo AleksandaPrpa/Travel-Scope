@@ -1,18 +1,39 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, FlatList } from "react-native";
-import ThemedView from "../../components/ThemedView";
+import { useEffect, useState } from "react";
+import { StyleSheet, Text } from "react-native";
 import SignOut from "../(auth)/signout";
 import { getUserData } from "../../services/userService";
+import ThemedView from "../../components/ThemedView";
+import ThemedText from "../../components/ThemedText";
 
 export default function Profile() {
-  const user = getUserData();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const data = await getUserData();
+        setUser(data);
+      } catch (error) {
+        console.error("Error loading user:", error);
+      }
+    };
+    fetchUser();
+  }, []);
+
   return (
     <ThemedView safe={true} style={styles.container}>
-      <Text>Welcome, {user.username}</Text>
+      {user ? (
+        <ThemedText style={styles.title}>
+          Welcome, <ThemedText title={true}>{user.username}</ThemedText>
+        </ThemedText>
+      ) : (
+        <ThemedText>Loading user...</ThemedText>
+      )}
       <SignOut />
     </ThemedView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
